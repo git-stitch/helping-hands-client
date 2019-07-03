@@ -105,3 +105,33 @@ export const setImages = () => {
   }
 }
 
+export const attendEvent = (userId, eventId) => {
+  const token = localStorage.token
+  return (dispatch) => {
+    if(token){
+    fetch("http://localhost:3000/api/v1/attendees", {
+      method:"POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accepts": "application/json",
+        "Authorization": token
+      },
+      body: JSON.stringify({
+        attendee:{
+          user_id:userId,
+          event_id:eventId
+        }
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.errors){
+        alert(data.errors)
+      } else {
+        dispatch({type:"ATTEND_EVENT",payload:data})
+      }
+    })
+  }
+  }
+}
+

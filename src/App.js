@@ -15,7 +15,7 @@ class App extends React.Component {
   componentDidMount = () => {
     this.props.autoLogin()
   }
-
+  
   render() {
     console.log(this.props.loggedIn, "state in app")
     return(
@@ -37,6 +37,7 @@ class App extends React.Component {
             <Route path="/home" render={(routerProps)=>{
               return <HomePageContainer {...routerProps}/>
             }}/>
+
             { this.props.loggedIn ? 
                <Route path="/home" render={(routerProps)=>{
                 return <HomePageContainer {...routerProps}/>

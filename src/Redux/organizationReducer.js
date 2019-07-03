@@ -18,6 +18,8 @@ const organizationReducer = (state= initialState, action) => {
       return {...state, currentOrganization:action.payload}
     case "SET_IMAGES":
       return {...state, organizationImages:state.currentOrganization.organization_images}
+    case "ATTEND_EVENT":
+      return {...state, currentOrganization: action.payload}
     default:
       return state
   }

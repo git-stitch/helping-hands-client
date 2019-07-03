@@ -15,26 +15,32 @@ class NavBar extends Component {
           </Link>
 
             <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" alt="" href="homer">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
+              <span aria-hidden="true">1</span>
+              <span aria-hidden="true">2</span>
+              <span aria-hidden="true">3</span>
             </a>
         </div>
     
       <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-start">
-          <a className="navbar-item" alt="" href="home">
-            Home
-          </a>
-  
-          <a className="navbar-item" href="causes">
-            Causes
-          </a>
+          <Link to="/home">
+            <a className="navbar-item" alt="" href="/home">
+              Home
+            </a>
+          </Link>
+
+          <Link to="/causes">
+            <a className="navbar-item" href="causes">
+              Causes
+            </a>
+          </Link>
     
           <div className="navbar-item has-dropdown is-hoverable">
-            <a className="navbar-link">
-              More
-            </a>
+            <Link to="/">
+              <a className="navbar-link">
+                More
+              </a>
+            </Link>
     
             <div className="navbar-dropdown">
               <a className="navbar-item" href="about">

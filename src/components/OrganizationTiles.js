@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {setImages} from '../Redux/actions'
+import {setImages, attendEvent} from '../Redux/actions'
 
 class OrganizationTiles extends React.Component {
   componentDidMount = () => {
@@ -24,7 +24,7 @@ class OrganizationTiles extends React.Component {
             <br />
             <p className="title">Attending</p>
             <p className="subtitle is-1"><i class="fas fa-user-astronaut"></i>  {this.props.organization.events === undefined ? "" : this.props.organization.events[0].users.length}</p>
-            <button className="button is-primary">Attend This Event</button>
+            <button className="button is-primary" onClick={()=>this.props.attendEvent(this.props.currentUser.id,this.props.organization.events[0].id)}>Attend This Event</button>
           </article>
         </div>
         <div className="tile is-parent">
@@ -142,7 +142,8 @@ class OrganizationTiles extends React.Component {
 const mapStateToProps = (state) => {
   return {
     currentOrganization:state.organizationReducer.currentOrganization,
-    organizationImages:state.organizationReducer.organizationImages
+    organizationImages:state.organizationReducer.organizationImages,
+    currentUser: state.userReducer.currentUser
   }
 }
 
@@ -150,6 +151,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setImages: () => {
       dispatch(setImages())
+    },
+    attendEvent:(userId, eventId) => {
+      dispatch(attendEvent(userId,eventId))
     }
   }
 }
