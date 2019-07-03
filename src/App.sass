@@ -1,0 +1,96 @@
+
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+// Set your brand colors
+$purple: #8a4d76;
+$cornflower-blue: #118AB2;
+$brown: #757763;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
+$gold: #FFD800;
+$caribbean-green: #06D6A0
+$orange-yellow: #FFD166;
+
+// Update Bulma's global variables
+$family-sans-serif: 'Nunito', sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $cornflower-blue;
+$link: $cornflower-blue;
+$widescreen-enabled: true;
+$fullhd-enabled: true;
+$content-heading-color: $caribbean-green;
+$footer-background-color: $gold;
+$infra-red: #EA0E41;
+
+// Update some of Bulma's component variables
+// $body-background-color: $beige-lighter;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+$section-padding: 1.5rem 1.5rem;
+$title-color: $infra-red;
+$subtitle-color: $cornflower-blue
+$dropdown-item-hover-color: $purple
+
+// Import only what you need from Bulma
+@import '../node_modules/bulma/sass/utilities/_all.sass';
+@import '../node_modules/bulma/sass/base/_all.sass';
+@import '../node_modules/bulma/sass/elements/button.sass';
+@import '../node_modules/bulma/sass/elements/container.sass';
+@import '../node_modules/bulma/sass/elements/form.sass';
+@import '../node_modules/bulma/sass/elements/title.sass';
+@import '../node_modules/bulma/sass/components/navbar.sass';
+@import '../node_modules/bulma/sass/layout/hero.sass';
+@import '../node_modules/bulma/sass/layout/section.sass';
+@import '../node_modules/bulma';
+view rawApp.sass hosted with ❤ by GitHub
+
+html 
+  scroll-behavior: smooth;
+
+.login-button-field
+  border-bottom-style: solid
+  padding-bottom: 5%
+
+.login-title
+  text-decoration: underline
+
+.loader-stuff
+  margin: 0 auto
+
+.slider-style
+  border-style: solid
+  border-color: $caribbean-green
+  text-decoration: underline
+  text-decoration-color: $orange-yellow
+  border-radius: 20px
+  padding-bottom: 2%
+  overflow: hidden
+
+.butt-column
+  margin-left: 30%
+
+.welcome-background
+  background-image: url("http://www.bruna.cat/imgdownload/full/10/103075/hand-wallpaper.jpg")
+  background-size: cover
+  background-position: center
+
+.welcome-box
+  background: rgb(255,255, 255);
+  background: rgba(255,255, 255,.4);
+
+.org-hero
+  background-image: url("http://humandevelopment.gov.bz/wordpress/wp-content/uploads/2014/04/wallpaper-kids-20.jpg")
+  background-size: cover
+  background-position: center
+
+.org-box
+  background: rgb(255,255, 255);
+  background: rgba(255,255, 255,.4);
