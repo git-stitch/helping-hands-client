@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {setImages, attendEvent} from '../Redux/actions'
+import { Link } from 'react-router-dom'
+import { setCurrentOrganization } from '../Redux/actions';
 
 class OrganizationTiles extends React.Component {
   componentDidMount = () => {
@@ -27,6 +29,7 @@ class OrganizationTiles extends React.Component {
             <button className="button is-primary" onClick={()=>this.props.attendEvent(this.props.currentUser.id,this.props.organization.events[0].id)}>Attend This Event</button>
           </article>
         </div>
+        {/* community outreach */}
         <div className="tile is-parent">
           <article className="tile is-child box">
             <p className="title">Community Outreach</p>
@@ -38,10 +41,15 @@ class OrganizationTiles extends React.Component {
         </div>
         <div className="tile is-parent">
           <article className="tile is-child box">
-            <p className="title">Third column</p>
-            <p className="subtitle">With some content</p>
+            <p className="title">Info</p>
+            <p className="subtitle">Contact Us</p>
             <div className="content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+              <p>Phone: {this.props.organization.organization_contacts === undefined ? "" : this.props.organization.organization_contacts[0].phone}</p>
+              <p>Email: {this.props.organization.organization_contacts === undefined ? "" : this.props.organization.organization_contacts[0].email}</p>
+              <p>Location: {this.props.organization.address}</p>
+              <p>Home Page: {this.props.organization.homepage_url}</p>
+              <p>Supporters: {this.props.organization.supporters === undefined ? "" : this.props.organization.supporters.length}</p>
+              <Link to="/donate"><button className="button is-primary" onClick={()=> this.props.setCurrentOrganization(this.props.organization)}>Donate</button></Link>
             </div>
           </article>
         </div>
@@ -57,15 +65,16 @@ class OrganizationTiles extends React.Component {
                 <p className="subtitle">{currentOrganization.mission_statement}</p>
               </article>
               <article className="tile is-child box">
-                <p className="title">Home Page</p>
-                <br></br>
-                <a href={currentOrganization.homepage_url}><p className="subtitle">{currentOrganization.homepage_url}</p></a>
+              <p className="title">Helping Hands</p>
+                <figure className="image is-1by1">
+                  <img src={this.props.organization.organization_images === undefined ? "" : this.props.organization.organization_images[1].img_url} 
+                  alt="logo"/>
+                </figure>
               </article>
             </div>
             <div className="tile is-parent">
               <article className="tile is-child box">
                 <p className="title">{currentOrganization.name}</p>
-                <p className="subtitle">With an image</p>
                 <figure className="image is-1by1">
                   <img src={currentOrganization.logo_url} alt="logo"/>
                 </figure>
@@ -99,7 +108,7 @@ class OrganizationTiles extends React.Component {
 
       <div className="tile is-ancestor">
         <div className="tile is-parent">
-          <article className="tile is-child box">
+          <article className="tile is-child box has-text-centered">
             <p className="title">Connect With Us</p>
             <div className="content">
               <nav className="level">
@@ -109,7 +118,7 @@ class OrganizationTiles extends React.Component {
                   return (
                     <>
                       <div className="level-item has-text-centered">
-                        <div>
+                        <div className="subtitle is-1">
                           <a href={`${media.url}`}><p><i class={`fab fa-${media.social_media_name.toLowerCase()}`}></i>
                           </p></a>
                         </div>
@@ -154,8 +163,13 @@ const mapDispatchToProps = (dispatch) => {
     },
     attendEvent:(userId, eventId) => {
       dispatch(attendEvent(userId,eventId))
+    },
+    setCurrentOrganization: (org)=>{
+      dispatch(setCurrentOrganization(org))
     }
   }
 }
+
+
 
 export default connect(mapStateToProps,mapDispatchToProps)(OrganizationTiles)

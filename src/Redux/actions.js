@@ -135,3 +135,31 @@ export const attendEvent = (userId, eventId) => {
   }
 }
 
+export const sendPaymentToTheBackend = (info, organization_id, user_id) => {
+  const token = localStorage.token
+
+  return (dispatch) => {
+    fetch("http://localhost:3000/api/v1/donate", {
+      method:"POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accepts": "application/json"
+      },
+      body:JSON.stringify({
+        user:{
+          id:user_id,
+          organization_id: organization_id,
+          token_id: info.token.token.id,
+          amount: info.amount,
+          organization_name: info.organization_name
+        }
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data, "donattion returned successfully")
+      // dispatch({type:"DOSOMETHTING"})
+    })
+  }
+}
+

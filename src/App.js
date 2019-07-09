@@ -10,6 +10,7 @@ import { Route, Switch, Redirect} from 'react-router-dom'
 import { autoLoginCurrentUser } from './Redux/actions';
 import WelcomeContainer from './containers/WelcomeContainer';
 import ShowContainer from './containers/ShowContainer';
+import DonateContainer from './containers/DonateContainer';
 
 class App extends React.Component {
   componentDidMount = () => {
@@ -17,6 +18,8 @@ class App extends React.Component {
   }
   
   render() {
+    const baseKey = process.env.REACT_APP_TEST_KEY
+    console.log(baseKey, "key test");
     console.log(this.props.loggedIn, "state in app")
     return(
       <div className="container is-fluid">
@@ -26,6 +29,10 @@ class App extends React.Component {
             {
               return <Login {...routerProps}/>
             }}/>
+            <Route path="/donate"render={(routerProps) =>
+          {
+            return <DonateContainer {...routerProps}/>
+          }}/>
           <Route path={`/organization/`} render={(routerProps)=>
           {
             return <ShowContainer {...routerProps}/>
