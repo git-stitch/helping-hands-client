@@ -4,7 +4,7 @@ import SimpleSlider from '../components/SimpleSlider';
 class SliderContainer extends Component {
   render() {
     return (
-      <div className="section slider-style has-text-centered">
+      <div className="section slider-style has-text-centered con-color">
         <p className="title is-1">Featured Causes</p>
         <SimpleSlider />
       </div>

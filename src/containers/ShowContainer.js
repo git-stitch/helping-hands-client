@@ -21,9 +21,9 @@ class ShowContainer extends Component {
     console.log(this.props, "props in show container")
     return (
       <div className="section">
-        <div className="container slider-style">
+        <div className="container slider-style con-color">
           <OrganizationHero  organization={this.props.currentOrganization}/>
-          <OrganizationTiles organization={this.props.currentOrganization}/>
+          <OrganizationTiles history={this.props.history}organization={this.props.currentOrganization}/>
         </div>
       </div>
     )

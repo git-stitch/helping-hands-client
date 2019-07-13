@@ -7,12 +7,12 @@ class DonateContainer extends Component {
   render() {
     console.log(this.props, "props in donate")
     return (
-      <div className="container">
+      <div className="container con-color">
         <StripeProvider apiKey="pk_test_lbvfij83Wm8eHLj3SS8tzokc002CbwdPmg">
         <div className="content box">
           <h1>Donate to {this.props.currentOrganization.name}</h1>
           <Elements>
-            <CheckoutForm />
+            <CheckoutForm  history={this.props.history}/>
           </Elements>
         </div>
       </StripeProvider>

@@ -73,9 +73,13 @@ class NavBar extends Component {
                   </div>
                   <div className="dropdown-menu" id="dropdown-menu4" role="menu">
                     <div className="dropdown-content">
+                        <Link to={this.props.currentUser ? `/profile/${this.props.currentUser.id}`
+                        :
+                        ""
+                        }
+                        >
                         <a href="/profile" className="dropdown-item">Profile</a>
-                        <a href="/support" className="dropdown-item">Supporting</a>    
-                        <a href="/donations" className="dropdown-item">Donations</a>
+                        </Link>
                         <a href="/" className="dropdown-item" onClick={this.props.logoutUser}>Logout</a> 
                       </div>
                     </div>

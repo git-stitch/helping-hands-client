@@ -29,7 +29,7 @@ class Login extends Component {
               <div className="field">
                 <p className="title is-1 login-title">Login</p>
                 <p className="control has-icons-left has-icons-right">
-                  <input className="input" type="email" placeholder="Email" onChange={(e)=> this.props.handleReduxFormChange(e.target,this.state.org_member)}/>
+                  <input className="input" type="email" placeholder="Email" id="email" onChange={(e)=> this.props.handleReduxFormChange(e.target,this.state.org_member)}/>
                   <span className="icon is-small is-left">
                     <i className="fas fa-envelope"></i>
                   </span>
@@ -40,7 +40,7 @@ class Login extends Component {
               </div>
               <div className="field">
                 <p className="control has-icons-left">
-                  <input className="input" type="password" placeholder="Password" onChange={(e)=> this.props.handleReduxFormChange(e.target,this.state.org_member)}/>
+                  <input className="input" type="password" placeholder="Password" id="password" onChange={(e)=> this.props.handleReduxFormChange(e.target,this.state.org_member)}/>
                   <span className="icon is-small is-left">
                     <i className="fas fa-lock"></i>
                   </span>

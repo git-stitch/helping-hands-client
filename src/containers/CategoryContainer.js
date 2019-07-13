@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 class CategoryContainer extends Component {
   render() {
     return (
-      <div className="container slider-style">
+      <div className="container slider-style con-color">
           <p className="title is-1 has-text-centered">Categories</p>
           <div className="columns is-centered">
             <div className="column is-one-fourth">

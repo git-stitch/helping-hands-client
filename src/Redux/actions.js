@@ -1,3 +1,5 @@
+import swal from 'sweetalert'
+
 ////////////////////////////////////////////////////////////
 //Fetch Organization Information
 ////////////////////////////////////////////////////////////
@@ -126,7 +128,7 @@ export const attendEvent = (userId, eventId) => {
     .then(res => res.json())
     .then(data => {
       if(data.errors){
-        alert(data.errors)
+        swal('You already attend this event.')
       } else {
         dispatch({type:"ATTEND_EVENT",payload:data})
       }
@@ -157,9 +159,101 @@ export const sendPaymentToTheBackend = (info, organization_id, user_id) => {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data, "donattion returned successfully")
-      // dispatch({type:"DOSOMETHTING"})
+      console.log(data, "donation returned successfully")
+      dispatch({type:"COMPLETE_DONATION"})
     })
   }
 }
 
+export const resetDonation = () => {
+  return (dispatch) => {
+    dispatch({type:"RESET_DONATION"})
+  }
+}
+
+export const updateCurrentUser = (userId, user) => {
+  const token = localStorage.token
+  return(dispatch) => {
+    // debugger
+    fetch(`http://localhost:3000/api/v1/users/${userId}`,{
+      method:"PATCH",
+      headers:{
+        "Content-Type":"application/json",
+        "Accept":"application/json",
+        "Authorization":token
+      },
+      body:JSON.stringify({
+        id:userId,
+        user:user
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.errors){
+        swal(data.errors)
+      } else{
+        dispatch({type:"SET_CURRENT_USER", payload:data.user})
+      }
+    })
+  }
+}
+
+export const fetchCurrentUser = (userId) => {
+  const token = localStorage.token
+  return (dispatch) => {
+    fetch(`http://localhost:3000/api/v1/users/${userId}`,{
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json",
+        "Authorization":token
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      dispatch({type:"SET_CURRENT_USER", payload:data})
+    })
+    .then(()=>{
+      dispatch({type:"LOADED_USER"})
+    })
+  }
+}
+
+export const showCurrentEvent = (event) => {
+  return (dispatch) => {
+    dispatch({type:"DISPLAY_CURRENT_EVENT", payload:event})
+  }
+}
+
+export const displayAllEvents = () => {
+  return (dispatch) => {
+    dispatch({type:"DISPLAY_ALL_EVENTS"})
+  }
+}
+
+export const signUpUser = (user, history) => {
+  return (dispatch) => {
+    fetch("http://localhost:3000/api/v1/users",{
+     method:"POST",
+     headers: {
+      "Content-Type": "application/json",
+      "Accepts": "application/json"
+    },
+    body:JSON.stringify({
+      user:{
+        email:user.email,
+        password:user.password
+      }
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if(data.errors){
+      swal(data.errors)
+    } else {
+      localStorage.setItem("token", data.token)
+      history.push("/home")
+      dispatch({type:"LOGIN_USER", payload:data.user})
+    }
+  })
+  }
+}

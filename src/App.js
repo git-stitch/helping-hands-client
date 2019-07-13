@@ -11,6 +11,7 @@ import { autoLoginCurrentUser } from './Redux/actions';
 import WelcomeContainer from './containers/WelcomeContainer';
 import ShowContainer from './containers/ShowContainer';
 import DonateContainer from './containers/DonateContainer';
+import ProfileContainer from './containers/ProfileContainer';
 
 class App extends React.Component {
   componentDidMount = () => {
@@ -18,28 +19,31 @@ class App extends React.Component {
   }
   
   render() {
-    const baseKey = process.env.REACT_APP_TEST_KEY
-    console.log(baseKey, "key test");
     console.log(this.props.loggedIn, "state in app")
     return(
-      <div className="container is-fluid">
-        <NavBar />
+      <div className="container is-fluid" >
+        <NavBar currentUser={this.props.currentUser}/>
         <Switch>
           <Route path="/login"render={(routerProps) =>
             {
               return <Login {...routerProps}/>
             }}/>
+          <Route path="/profile"render={(routerProps) =>
+            {
+              return <ProfileContainer {...routerProps} currentUser={this.props.currentUser}/>
+            }}/>
+            {
             <Route path="/donate"render={(routerProps) =>
           {
             return <DonateContainer {...routerProps}/>
-          }}/>
+          }}/>}
           <Route path={`/organization/`} render={(routerProps)=>
           {
             return <ShowContainer {...routerProps}/>
             }}/>
-          <Route path="/signup"render={() =>
+          <Route path="/signup"render={(routerProps) =>
             {
-              return <Signup />
+              return <Signup {...routerProps}/>
             }}/>
             <Route path="/home" render={(routerProps)=>{
               return <HomePageContainer {...routerProps}/>

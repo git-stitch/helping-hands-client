@@ -3,7 +3,9 @@ let initialState = {
   featured: [],
   currentOrganization:{},
   organizationImages:{},
-  loading: true
+  loading: true,
+  currentEvent: {},
+  displayEvent: false
 }
 const organizationReducer = (state= initialState, action) => {
   switch(action.type){
@@ -20,6 +22,10 @@ const organizationReducer = (state= initialState, action) => {
       return {...state, organizationImages:state.currentOrganization.organization_images}
     case "ATTEND_EVENT":
       return {...state, currentOrganization: action.payload}
+    case "DISPLAY_CURRENT_EVENT":
+      return {...state, currentEvent:action.payload, displayEvent:true}
+    case "DISPLAY_ALL_EVENTS":
+      return {...state, displayEvent:false}
     default:
       return state
   }

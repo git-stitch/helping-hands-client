@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import { connect } from 'react-redux'
 import { sendPaymentToTheBackend } from '../Redux/actions'
+import { Redirect} from 'react-router-dom'
+import swal from 'sweetalert';
+
 
 class CheckoutForm extends Component {
 
@@ -19,22 +22,42 @@ class CheckoutForm extends Component {
     event.preventDefault()
     this.props.stripe.createToken({name:"Name"}).then(data => {
       if(data.errors){
-        alert("Something was wrong with your credentials")
+        swal("Something was wrong with your credentials")
       } else {
         console.log(data);
         let paymentInformation = {
           token: data, 
           amount: this.state.donation, organization_name:this.props.currentOrganization.name
         }
-        this.props.sendPayment(paymentInformation,this.props.currentOrganization.id,this.props.currentUser.id)
+        let status = this.props.sendPayment(paymentInformation,this.props.currentOrganization.id,this.props.currentUser.id)
+        
+        return status
       }
+    })
+  }
+
+  completeDonation = () => {
+    swal({
+      title: "Thank You!",
+      text: "Your Donation Was Successful.",
+      icon: "success",
+      button: "Continue",
+    }).then(()=>{
+      this.props.history.push("/home")
     })
   }
 
   render() {
     console.log(this.props, 'in da form');
     return (
-      <div className="checkout">
+      <>
+      {   
+          this.props.complete ? 
+          this.completeDonation()
+          :
+           null
+        }
+        <div className="checkout">
         <div className="content">
           <p className="title is-3">Would you like to complete the purchase?</p>
           <label>Donation Amount: </label>
@@ -44,7 +67,8 @@ class CheckoutForm extends Component {
         <CardElement />
         <br></br>
         <button className="button is-primary" onClick={this.submit}>Donate</button>
-      </div>
+      </div> 
+    </>
     );
   }
 }
@@ -53,7 +77,8 @@ const mapStateToProps = (state) => {
   return {
     currentOrganization: state.organizationReducer.currentOrganization,
     currentUser:
-    state.userReducer.currentUser
+    state.userReducer.currentUser,
+    complete: state.userReducer.complete
   }
 }
 

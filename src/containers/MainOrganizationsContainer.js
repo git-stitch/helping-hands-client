@@ -6,7 +6,7 @@ class MainOrganizationsContainer extends Component {
   render() {
     console.log(this.props, "in main container");
     return (
-      <div className="container slider-style">
+      <div className="container slider-style con-color">
         <p className="title is-1 has-text-centered">Causes</p>
         <div className="columns is-multiline is-vcentered">
           {

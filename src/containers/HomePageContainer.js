@@ -5,10 +5,12 @@ import loader from '../images/pacman-loader.svg'
 import SliderContainer from './SliderContainer';
 import CategoryContainer from './CategoryContainer'
 import MainOrganizationsContainer from './MainOrganizationsContainer'
+import {resetDonation} from '../Redux/actions'
 
 class HomePageContainer extends Component {
   componentDidMount = () => {
     this.props.fetchOrganizations()
+    this.props.resetDonation()
   }
 
   render() {
@@ -48,7 +50,8 @@ const mapStateToProps = (state) => {
   return {
     currentUser: state.userReducer.currentUser,
     organization: state.organizationReducer,
-    loading: state.organizationReducer.loading
+    loading: state.organizationReducer.loading,
+    complete: state.userReducer.complete
   }
 }
 
@@ -56,6 +59,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchOrganizations: () => {
       dispatch(fetchOrganizations())
+    },
+    resetDonation: () => {
+      dispatch(resetDonation())
     }
   }
 }
