@@ -4,7 +4,7 @@ The Helping Hands client is a Non-Profit Donation Marketplace. It was meant to g
 
 * [Helping Hands API](https://github.com/VonStein7/helping-hands-api) - The Non-Profit Donation Marketplace API
 
-## Getting Started
+## Initial Setup
 
 You will need node and npm to get started. The current build runs NPM 6.4.1 and Node v10.15.3 and the Helping Hands API for the backend.
 
