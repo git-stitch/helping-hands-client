@@ -38,7 +38,7 @@ password: test123
 ```
 
 ## Login Page
-![HelpingHandsClient](https://i.ibb.co/JH2VcmM/Screen-Shot-2019-07-16-at-2-37-01-PM.png "HelpingHandsClient")
+![HelpingHandsClient](https://i.ibb.co/LnzzfgJ/Screen-Shot-2019-07-16-at-2-58-21-PM.png "HelpingHandsClient")
 
 ## Home Page
 ![HelpingHandsClient](https://i.ibb.co/mv4Fzyb/Screen-Shot-2019-07-16-at-2-53-40-PM.png "HelpingHandsClient")
@@ -50,9 +50,14 @@ The user profile page shows the users stats. Donations, organizations they suppo
 
 ## Built With
 
-* [Ruby on Rails](https://rubyonrails.org/) - Backend Server
-* [Postgres](https://postgresapp.com/) - Database management
+* [React](https://reactjs.org/) - Frontend Framework
+* [Redux](https://redux.js.org/) - State management tool
 * [Stripe](https://stripe.com/) - Payment Gateway
+* [Bulma.io](https://bulma.io/) - Payment Gateway
+* [React-Slick](https://github.com/akiran/react-slick) - Payment Gateway
+* [Sweet Alert](https://sweetalert.js.org/) - Payment Gateway
+* [Node Sass](https://github.com/sass/node-sass) - Payment Gateway
+
 
 ## Versioning
 
@@ -60,7 +65,7 @@ I use [SemVer](http://semver.org/) for versioning. For the versions available, s
 
 ## Author
 
-* **Brenden Williams** - *Initial work* - [VonStein](https://github.com/VonStein7)
+* **Brenden Williams** - [VonStein](https://github.com/VonStein7)
 
 ## License
 
