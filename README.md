@@ -28,7 +28,7 @@ npm start
 ![Setup](https://i.ibb.co/j3fYTmB/Screen-Shot-2019-07-16-at-2-31-02-PM.png "React Started")
 
 # Welcome Page
-![HelpingHandsClient](https://i.ibb.co/2ybrtLK/Screen-Shot-2019-07-16-at-12-53-09-PM.png "HelpingHandsClient")
+![HelpingHandsClient](https://i.ibb.co/m5d6DnZ/Screen-Shot-2019-07-16-at-3-04-57-PM.png "HelpingHandsClient")
 
 ## Test User
 To test the site login using the test credentials. You can also signup and use those. 
