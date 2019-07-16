@@ -1,68 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Helping Hands Client
 
-## Available Scripts
+The Helping Hands client is a Non-Profit Donation Marketplace. It was meant to give other non-profits a way to get donations and interact with their community. It's complete with the Stripe payments, user authorization, creation. Non-profit and organization member dashboards coming in later builds. 
 
-In the project directory, you can run:
+* [Helping Hands API](https://github.com/VonStein7/helping-hands-api) - The Non-Profit Donation Marketplace API
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You will need node and npm to get started. The current build runs NPM 6.4.1 and Node v10.15.3 and the Helping Hands API for the backend.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Installing
 
-### `npm test`
+```
+npm install
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Getting Started
 
-### `npm run build`
+To get started locally you'll need to have the API running on port 3000.  Follow the server setup up and then start your React Server with NPM start. After press "y" to continue to port 3001. Now your up and running.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Start the React App
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Press 'y'
+![Setup](https://i.ibb.co/j3fYTmB/Screen-Shot-2019-07-16-at-2-31-02-PM.png "React Started")
 
-### `npm run eject`
+#Welcome Page
+![HelpingHandsClient](https://i.ibb.co/2ybrtLK/Screen-Shot-2019-07-16-at-12-53-09-PM.png "HelpingHandsClient")
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Test User
+To test the site login using the test credentials. You can also signup and use those. 
+```
+email: test123@test.com
+password: test123
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##Login Page
+![HelpingHandsClient](https://i.ibb.co/JH2VcmM/Screen-Shot-2019-07-16-at-2-37-01-PM.png "HelpingHandsClient")
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##Home Page
+![HelpingHandsClient](https://i.ibb.co/JH2VcmM/Screen-Shot-2019-07-16-at-2-37-01-PM.png "HelpingHandsClient")
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+##User Profile
+The user profile page shows the users stats. Donations, organizations they support, events they are attending and in the future medals they have collected. There is a calendar made with [React Calendar](https://github.com/wojtekmaj/react-calendar#readme). It lists days of events a user is scheduled for. 
 
-## Learn More
+![HelpingHandsClient](https://i.ibb.co/0qtS9Kg/Screen-Shot-2019-07-16-at-2-48-37-PM.png "HelpingHandsClient")
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Built With
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [Ruby on Rails](https://rubyonrails.org/) - Backend Server
+* [Postgres](https://postgresapp.com/) - Database management
+* [Stripe](https://stripe.com/) - Payment Gateway
 
-### Code Splitting
+## Versioning
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
-### Analyzing the Bundle Size
+## Author
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+* **Brenden Williams** - *Initial work* - [VonStein](https://github.com/VonStein7)
 
-### Making a Progressive Web App
+## License
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-### Advanced Configuration
+## Acknowledgments
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* Big Ups to Flatiron School and my Cohort for supporting me through this project.
