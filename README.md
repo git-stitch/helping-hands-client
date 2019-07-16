@@ -41,12 +41,12 @@ password: test123
 ![HelpingHandsClient](https://i.ibb.co/JH2VcmM/Screen-Shot-2019-07-16-at-2-37-01-PM.png "HelpingHandsClient")
 
 ## Home Page
-![HelpingHandsClient](https://i.ibb.co/JH2VcmM/Screen-Shot-2019-07-16-at-2-37-01-PM.png "HelpingHandsClient")
+![HelpingHandsClient](https://i.ibb.co/mv4Fzyb/Screen-Shot-2019-07-16-at-2-53-40-PM.png "HelpingHandsClient")
 
 ## User Profile
 The user profile page shows the users stats. Donations, organizations they support, events they are attending and in the future medals they have collected. There is a calendar made with [React Calendar](https://github.com/wojtekmaj/react-calendar#readme). It lists days of events a user is scheduled for. 
 
-![HelpingHandsClient](https://i.ibb.co/0qtS9Kg/Screen-Shot-2019-07-16-at-2-48-37-PM.png "HelpingHandsClient")
+![HelpingHandsClient](https://i.ibb.co/Rvjx52t/Screen-Shot-2019-07-16-at-2-55-25-PM.png "HelpingHandsClient")
 
 ## Built With
 
