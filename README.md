@@ -27,7 +27,7 @@ npm start
 ### Press 'y'
 ![Setup](https://i.ibb.co/j3fYTmB/Screen-Shot-2019-07-16-at-2-31-02-PM.png "React Started")
 
-#Welcome Page
+# Welcome Page
 ![HelpingHandsClient](https://i.ibb.co/2ybrtLK/Screen-Shot-2019-07-16-at-12-53-09-PM.png "HelpingHandsClient")
 
 ## Test User
@@ -37,13 +37,13 @@ email: test123@test.com
 password: test123
 ```
 
-##Login Page
+## Login Page
 ![HelpingHandsClient](https://i.ibb.co/JH2VcmM/Screen-Shot-2019-07-16-at-2-37-01-PM.png "HelpingHandsClient")
 
-##Home Page
+## Home Page
 ![HelpingHandsClient](https://i.ibb.co/JH2VcmM/Screen-Shot-2019-07-16-at-2-37-01-PM.png "HelpingHandsClient")
 
-##User Profile
+## User Profile
 The user profile page shows the users stats. Donations, organizations they support, events they are attending and in the future medals they have collected. There is a calendar made with [React Calendar](https://github.com/wojtekmaj/react-calendar#readme). It lists days of events a user is scheduled for. 
 
 ![HelpingHandsClient](https://i.ibb.co/0qtS9Kg/Screen-Shot-2019-07-16-at-2-48-37-PM.png "HelpingHandsClient")
